@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<!--
+ *  Copyright (c) 2015 The WebRTC project authors. All Rights Reserved.
+ *
+ *  Use of this source code is governed by a BSD-style license
+ *  that can be found in the LICENSE file in the root of the source
+ *  tree.
+-->
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, height=device-height, user-scalable=yes, initial-scale=1, maximum-scale=1">
+
+  <!-- <meta itemprop="image" content="../../../images/webrtc-icon-192x192.png"> -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta id="theme-color" name="theme-color" content="#ffffff">
+  <meta property="og:type" content="image" />
+  <meta property="og:title" content="Workiversary" />
+  <meta property="og:description" content="Looking ahead.." />
+  <!-- <meta property="og:image" content="https://pbs.twimg.com/media/DWfdjTUX4AAdRqr.jpg:large" /> -->
+  <!-- <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# image: http://ogp.me/ns/image#">
+ <meta property="fb:app_id" content="302184056577324" />-->
+  <!-- <base target="_blank"> -->
+  <title>Smile and Say Ink!</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet">
+ 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/granim/1.1.0/granim.min.js"></script>
+  <script src="libs/p5.min.js"></script>
+  <script src="libs/p5.dom.js"></script>
+  <script src="libs/canvas-to-blob.js"></script>
+  <script src="libs/dom-to-image.js"></script>
+  <script src="libs/clmtrackr.min.js"></script>
+  <script src="libs/model_pca_20_svm.js"></script>
+  <script src="libs/emotion_classifier.js"></script>
+  <script src="libs/emotionmodel.js"></script>
+
+
+
+</head>
+
+<body>
+  <script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      //local version
+      appId: '157775784925663',
+      //remote version
+      //appId            : '464477610635000',
+      //remote version
+      //appId            : '1300335440067028',
+      autoLogAppEvents : true,
+      xfbml            : true,
+      version          : 'v2.12'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+
+
+</script>
+
+  <div id="fb-root"></div>
+    <div id="landscapeMode">
+      <div id="landscapeText">Rotate your phone to play.</div>
+    </div>
+    <div id="container">
+      <img src="images/clicker.png" id="clicker">
+      <img src="images/sayInk.png" id="sayInk">
+      <img src="images/prize.png" id="prize">
+
+
+      <video id="video" autoplay playsinline ></video>
+      <canvas id="shapShot"></canvas>
+      <canvas id="canvas-basic"></canvas>
+      <!-- share now cta -->
+      <div id="block">
+        <div id="successText"></div>
+        <div id="shareText">SHARE</div>
+        <img src="images/fb.png" id="fbLogo">
+        <!-- <img src="images/twitter.png" id="twitterLogo"> -->
+
+        <div id="cancelText">CANCEL</div>
+        <button onclick="login()" class="fb-share-button" id="loginBtn">Login</button>
+      </div>
+      <div id="errorMsg">
+      </div>
+
+
+  
+  <!-- <script src="js/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script> -->
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+  <!-- <script src="js/html2canvas.js"></script> -->
+  <script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
+  <script src="js/index.js"></script>
+
+</body>
+</html>
